@@ -1,0 +1,43 @@
+﻿<Window x:Class="PUBMVVMTASK.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:PUBMVVMTASK"
+        mc:Ignorable="d"
+        WindowStyle="None"
+        Title="MainWindow" Height="450" Width="510">
+    <Grid Background="Coral">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="20*"/>
+        </Grid.RowDefinitions>
+
+        <WrapPanel>
+            <ComboBox Width="450" Name="cmbbox" Grid.Row="0" ItemsSource="{Binding Pubs}" DisplayMemberPath="Name"></ComboBox>
+            <Button Name="XButton" Width="40" Background="Black" Foreground="Red" Content="X" FontSize="13"></Button>
+        </WrapPanel>
+        <Grid Background="Coral" Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*"/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+
+            <Grid Background="DarkOrange" Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="4*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid Background="Orange" Grid.Row="1">
+                    <StackPanel Orientation="Horizontal">
+                        <Button Style="{StaticResource GelButton}" Content="Buy" FontFamily="Comic Sans MS" Width="70" Height="35" Margin="15" Background="Black" Foreground="White"></Button>
+                        <Button Style="{StaticResource GelButton}" Content="Reset" FontFamily="Comic Sans MS" Width="70" Height="35" Margin="25" Background="Black" Foreground="White"></Button>
+                        <Button Style="{StaticResource GelButton}" Content="History" FontFamily="Comic Sans MS" Width="70" Height="35" Margin="20" Background="Black" Foreground="White"></Button>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+            
+
+        </Grid>
+    </Grid>
+</Window>
